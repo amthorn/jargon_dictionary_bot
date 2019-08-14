@@ -1,0 +1,13 @@
+version: '3'
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      JARGON_DICTIONARY_FILE: data.json
+      DAILY_TIME: "08:00"
+    tty: True
+    stdin_open: True
+    entrypoint:
+      python bot.py
